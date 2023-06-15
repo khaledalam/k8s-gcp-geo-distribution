@@ -1,0 +1,30 @@
+name: Deploy App
+run-name: Deploy App to GKE by @${{ github.actor }}
+
+on: workflow_dispatch
+
+env:
+  cluster_name: geo-cluster
+  cluster_location: us-central1
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Authorize to GCP
+      uses: google-github-actions/auth@v0
+      with:
+        credentials_json: ${{ secrets.GCP_GKE_SA }}
+    
+    - name: Get Credentials
+      uses: google-github-actions/get-gke-credentials@v0
+      with:
+        cluster_name: ${{ env.cluster_name }}
+        location: ${{ env.cluster_location }}
+
+    - name: Apply deployment
+      run: |
+        kubectl replace -f k8s --force

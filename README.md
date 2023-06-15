@@ -5,7 +5,7 @@
 [![Docker Version](https://img.shields.io/docker/v/khaledalam/k8s-gcp-geo-distribution?sort=semver)](https://hub.docker.com/r/khaledalam/k8s-gcp-geo-distribution/)
 
 
-Core APP has 2 different versions (determined by env var `APP_COUNTRY`) Override by K8s(`spec.containers.env`):
+APP has 2 different versions (determined by env var `APP_COUNTRY`) Override by K8s(`spec.containers.env`):
 - US 
 - UAE
 
