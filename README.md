@@ -12,6 +12,29 @@ Core APP has 2 different versions (determined by env var `APP_COUNTRY`) Override
 
 Each version placed on a K8s deployment<->service.
 
+K8s resources:
+```
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/deployment-uae-5b7d4b6dd7-7mlsp   1/1     Running   0          49s
+pod/deployment-uae-5b7d4b6dd7-kvtmc   1/1     Running   0          49s
+pod/deployment-us-6db549b746-bhzxt    1/1     Running   0          49s
+pod/deployment-us-6db549b746-rp9kw    1/1     Running   0          49s
+
+NAME                  TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/kubernetes    ClusterIP      10.96.0.1      <none>        443/TCP        7d2h
+service/service-uae   LoadBalancer   10.106.99.18   <pending>     80:30947/TCP   49s
+service/service-us    LoadBalancer   10.99.99.39    <pending>     80:31567/TCP   49s
+
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deployment-uae   2/2     2            2           49s
+deployment.apps/deployment-us    2/2     2            2           49s
+
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/deployment-uae-5b7d4b6dd7   2         2         2       49s
+replicaset.apps/deployment-us-6db549b746    2         2         2       49s
+```
+
+
 
 Routing:
 - 1st method: `-`
