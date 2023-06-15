@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  geo-datetime:
+    container_name: geo-datetime
+    build: 
+      context: .
+    restart: unless-stopped
+    ports:
+      - "80:80"

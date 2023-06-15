@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-uae
+  labels:
+    app: uae
+spec:
+  # Clean up "Replica Sets" when updating deployments, revisionHistoryLimit => Default to 10 if not specified
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: uae
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: uae
+    spec:
+      containers:
+      - name: uae
+        image:  khaledalam/k8s-gcp-geo-distribution:latest
+        env:
+          # Override .env file (APP_COUNTRY)
+          - name: APP_COUNTRY
+            value: "UAE"
+        ports:
+        - containerPort: 80

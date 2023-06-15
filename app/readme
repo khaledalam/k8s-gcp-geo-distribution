@@ -1,0 +1,10 @@
+## Simple Python FastAPI.
+
+#### 1-codebase deployed as multi-versions based on config environment variable (APP_COUNTRY).
+
+---
+##### Endpoints:
+http://127.0.0.1
+
+- `/` => returns result message based on app version.
+- `/datetimenow` => returns date and time based on app version.
