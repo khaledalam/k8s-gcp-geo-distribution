@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-us
+  name: deploy-us
+  namespace: ns-geo-distribution
   labels:
     app: us
 spec:
@@ -18,7 +19,7 @@ spec:
     spec:
       containers:
       - name: us
-        image:  khaledalam/k8s-gcp-geo-distribution:latest
+        image:  khaledalam/k8s-gcp-geo-distribution:v1.0.1
         env:
           # Override .env file (APP_COUNTRY)
           - name: APP_COUNTRY
@@ -29,7 +30,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-us
+  namespace: ns-geo-distribution
+  name: srv-us
 spec:
   selector:
     app: us
