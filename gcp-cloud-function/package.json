@@ -1,0 +1,10 @@
+{
+    "name": "geo-distribution",
+    "author": "Khaled Alam",
+    "version": "0.0.1",
+    "dependencies": {
+        "@google-cloud/functions-framework": "^3.0.0",
+        "geoip-lite": "^1.4.7"
+    }
+  }
+  
