@@ -16,12 +16,6 @@ Each version placed on a K8s deployment<->service.
 
 K8s resources:
 ```
-NAME                                  READY   STATUS    RESTARTS   AGE
-pod/deployment-uae-5b7d4b6dd7-7mlsp   1/1     Running   0          49s
-pod/deployment-uae-5b7d4b6dd7-kvtmc   1/1     Running   0          49s
-pod/deployment-us-6db549b746-bhzxt    1/1     Running   0          49s
-pod/deployment-us-6db549b746-rp9kw    1/1     Running   0          49s
-
 NAME                              READY   STATUS    RESTARTS   AGE
 pod/deploy-uae-5979b498c4-267r4   1/1     Running   0          9s
 pod/deploy-uae-5979b498c4-r986l   1/1     Running   0          9s
