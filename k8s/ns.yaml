@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ns-geo-distribution
+  labels:
+    name: ns-geo-distribution

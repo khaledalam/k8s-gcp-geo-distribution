@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: ns-geo-distribution
+  name: ing-geo
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: k8s-ingress-url.com
+    http:
+      paths:
+      - path: /us
+        pathType: Prefix
+        backend:
+          serviceName: service-us
+          servicePort: 80
+      - path: /uae
+        pathType: Prefix
+        backend:
+          serviceName: service-uae
+          servicePort: 80
