@@ -4,9 +4,8 @@ metadata:
   namespace: ns-geo-distribution
   name: ing-geo
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  ingressClassName: nginx
   rules:
   - host: k8s-ingress-url.com
     http:
@@ -14,10 +13,15 @@ spec:
       - path: /us
         pathType: Prefix
         backend:
-          serviceName: service-us
-          servicePort: 80
+          service:
+            name: service-us
+            port:
+              number: 80
       - path: /uae
         pathType: Prefix
         backend:
-          serviceName: service-uae
-          servicePort: 80
+          service:
+            name: service-uae
+            port:
+              number: 80
+
