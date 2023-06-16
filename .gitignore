@@ -1,2 +1,4 @@
 .lh
 .history
+.DS_Store
+./gcp-cloud-function/node_modules

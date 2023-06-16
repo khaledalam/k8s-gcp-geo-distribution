@@ -9,8 +9,10 @@ APP has 2 different versions (determined by env var `APP_COUNTRY`) Override by K
 - US 
 - UAE
 
-
 Each version placed on a K8s deployment<->service.
+
+### Diagram:
+<img src="infra-diagram.png" />
 
 K8s resources:
 ```
@@ -37,5 +39,11 @@ replicaset.apps/deployment-us-6db549b746    2         2         2       49s
 
 
 Routing:
-- 1st method: `-`
-- 2nd method: `-`
+- 1st method: `(costly solution)`
+    - Used GCP function and node package [geoip-lite](https://github.com/geoip-lite/node-geoip)(based on maxmind) for locating the user ip country and routing the traffic to k8s ingress paths `/us` or `/uae`.
+      - GCP function 2nd-gen has more `Runtime, build, connections and security settings` such as Concurrency(Maximum concurrent requests per instance).
+  - Improvements:
+    - Replace GCP function with lower price solution
+    - Caching maxmind api calls
+    - ...
+- Other methods: `investigating ingress-nginx custom annotation and other solutions`

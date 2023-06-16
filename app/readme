@@ -6,5 +6,5 @@
 ##### Endpoints:
 http://127.0.0.1
 
-- `/` => returns result message based on app version.
-- `/datetimenow` => returns date and time based on app version.
+- `/result` => returns result message based on app version.
+- `/datetimenow` => returns date and time based on app version(country timezone).

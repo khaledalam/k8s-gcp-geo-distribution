@@ -19,8 +19,8 @@ app_country = os.getenv('APP_COUNTRY')
 
 app = FastAPI()
 
-@app.get("/")
-async def index(request: Request):
+@app.get("/result")
+async def result(request: Request):
     global app_country
     
     # different logic based on app_country env var.
