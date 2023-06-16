@@ -1,8 +1,11 @@
 # k8s-gcp-geo-distribution
 
-[<small>khaledalam/k8s-gcp-geo-distribution</small>](https://hub.docker.com/repository/docker/khaledalam/k8s-gcp-geo-distribution/)<br />
+Routing traffic based on user geo-location using Kubernetes(K8s) and Google Cloud Platform(GCP) infrastructure.
+
+
 [![Docker Pulls](https://img.shields.io/docker/pulls/khaledalam/k8s-gcp-geo-distribution.svg)](https://hub.docker.com/r/khaledalam/k8s-gcp-geo-distribution/)
 [![Docker Version](https://img.shields.io/docker/v/khaledalam/k8s-gcp-geo-distribution?sort=semver)](https://hub.docker.com/r/khaledalam/k8s-gcp-geo-distribution/)
+![Build](https://github.com/khaledalam/k8s-gcp-geo-distribution/workflows/build/badge.svg)
 
 
 APP has 2 different versions (determined by env var `APP_COUNTRY`) Override by K8s(`spec.containers.env`):
@@ -46,6 +49,6 @@ Routing:
       - GCP function 2nd-gen has more `Runtime, build, connections and security settings` such as Concurrency(Maximum concurrent requests per instance).
   - Improvements:
     - Replace GCP function with lower price solution
-    - Caching maxmind api calls
+    - DB update mechanism, Caching maxmind calls, ..
     - ...
 - Other methods: `investigating ingress-nginx custom annotation and other solutions`
