@@ -22,18 +22,26 @@ pod/deployment-uae-5b7d4b6dd7-kvtmc   1/1     Running   0          49s
 pod/deployment-us-6db549b746-bhzxt    1/1     Running   0          49s
 pod/deployment-us-6db549b746-rp9kw    1/1     Running   0          49s
 
-NAME                  TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
-service/kubernetes    ClusterIP      10.96.0.1      <none>        443/TCP        7d2h
-service/service-uae   LoadBalancer   10.106.99.18   <pending>     80:30947/TCP   49s
-service/service-us    LoadBalancer   10.99.99.39    <pending>     80:31567/TCP   49s
+NAME                              READY   STATUS    RESTARTS   AGE
+pod/deploy-uae-5979b498c4-267r4   1/1     Running   0          9s
+pod/deploy-uae-5979b498c4-r986l   1/1     Running   0          9s
+pod/deploy-us-77db5f8549-mrtpc    1/1     Running   0          9s
+pod/deploy-us-77db5f8549-xv57c    1/1     Running   0          9s
 
-NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/deployment-uae   2/2     2            2           49s
-deployment.apps/deployment-us    2/2     2            2           49s
+NAME              TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+service/srv-uae   LoadBalancer   10.108.10.19     <pending>     80:30730/TCP   9s
+service/srv-us    LoadBalancer   10.105.232.173   <pending>     80:31591/TCP   9s
 
-NAME                                        DESIRED   CURRENT   READY   AGE
-replicaset.apps/deployment-uae-5b7d4b6dd7   2         2         2       49s
-replicaset.apps/deployment-us-6db549b746    2         2         2       49s
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/deploy-uae   2/2     2            2           9s
+deployment.apps/deploy-us    2/2     2            2           9s
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/deploy-uae-5979b498c4   2         2         2       9s
+replicaset.apps/deploy-us-77db5f8549    2         2         2       9s
+
+NAME                                CLASS   HOSTS                 ADDRESS   PORTS   AGE
+ingress.networking.k8s.io/ing-geo   nginx   k8s-ingress-url.com             80      9s
 ```
 
 
