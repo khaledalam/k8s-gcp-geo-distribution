@@ -3,3 +3,4 @@
 .DS_Store
 ./gcp-cloud-function/node_modules
 key.json
+notes
